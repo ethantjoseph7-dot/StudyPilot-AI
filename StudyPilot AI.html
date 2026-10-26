@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<menuta chaeste="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport"content="width=device-width, initial-scale=1">
     <title>StudyPilot AI | Student Dashboard</title>
     <style>
@@ -24,17 +24,10 @@
         button, input, select,textarea{ font: inherit;}
         button{ cursor: pointer;}
         .app {display: flex; min-height: 100vh;}
-        .sidevar{
+        .sidebar{
             width: 235px; padding:28px 18px;
             background: var(--card); border-right: 1px solid var(--border);
             flex-shrink: 0;
-<div class="timer">
-  <h2>Study Timer</h2>
-  <h1 id="time">25:00</h1>
-  <button onclick="startTimer()">Start</button>
-  <button onclick="pauseTimer()">Pause</button>
-  <button onclick="resetTimer()">Reset</button>
-  </div>
         }
         .logo{ font-size: 22px; font-weight: 800; margin-bottom: 36px;}
         .logo span{ color: var(--primary);}
@@ -48,7 +41,7 @@
         }
         .sidebar-note{
             margin-top: 45px; padding: 16px; border-radius: 14px;
-            background: #f0efff; ; font-size: 13px; line height: 1.6; color: var(--muted);
+            background: #f0efff; font-size: 13px; line-height: 1.6; color: var(--muted);
         }
         main{ flex: 1; min-width:0 ; padding: 30px; max-width: 1500px;}
         .topbar {
@@ -558,14 +551,6 @@ function generateQuiz() {
     $("quizResult").textContent = `You scored ${correct}/${currentQuiz.length} (${score}%). Review your notes and try again!`;
   });
 }
-<section class="notes">
-  <h2> Quick Notes</h2>
-  <textarea id="myNotes"
-  placeholder="Write your study notes here..."></textarea>
-  <button onclick="saveNotes()">Save Notes</button>
-  <p id="noteStatus"></p>
-</section>
-
 // Focus timer
 let remaining = 25 * 60;
 let timerInterval = null;
@@ -627,7 +612,6 @@ $("timerMinutes").addEventListener("change", () => {
 render();
 displayTimer();
 
-            </style>
-</menuta>
-</head>
+</script>
+</body>
 </html>
