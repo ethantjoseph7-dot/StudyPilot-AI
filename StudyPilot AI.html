@@ -505,11 +505,16 @@ function generateQuiz() {
 
   currentQuiz = candidates.slice(0, 5).map((q, index) => {
     const wrongAnswers = candidates.filter(x => x.answer !== q.answer).map(x => x.answer);
-    const options = [q.answer, ...wrongAnswers.slice(0, 3)];
-    while (options.length < 4) options.push("Review the notes for this answer");
-    // Deterministic shuffle for this question.
-    options.sort((a, b) => (a.length % 7) - (b.length % 7));
-    return { ...q, options: [...new Set(options)].slice(0, 4), index };
+    const distractors = [...new Set(wrongAnswers)]
+      .filter(answer => answer !== q.answer)
+      .slice(0, 3);
+    const options = [q.answer, ...distractors];
+    // Shuffle answer choices so the correct answer is not always first.
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]];
+    }
+    return { ...q, options, index };
   });
 
   area.innerHTML = `
@@ -608,6 +613,21 @@ function resetTimer() {
 $("timerMinutes").addEventListener("change", () => {
   if (!timerInterval) resetTimer();
 });
+
+function newTip() {
+  const tips = [
+    "Study for 25 minutes, then take a short break.",
+    "After reading a topic, close the book and explain it in your own words.",
+    "Break a large assignment into small tasks you can finish one at a time.",
+    "Practise recalling key ideas instead of only rereading your notes.",
+    "Keep your phone and other distractions away during a focus session.",
+    "Review difficult topics again after a day or two."
+  ];
+  const tip = $("tipText");
+  if (!tip) return;
+  const choices = tips.filter(item => item !== tip.textContent);
+  tip.textContent = choices[Math.floor(Math.random() * choices.length)];
+}
 
 render();
 displayTimer();
