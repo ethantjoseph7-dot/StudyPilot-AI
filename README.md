@@ -15,6 +15,25 @@ The current project includes:
 
 **Important:** The quiz maker is rule-based in this version. It does not connect to an AI model or guarantee that every generated answer choice is good. Review questions and answers before relying on them.
 
+## Screenshots
+
+These screenshots show StudyPilot AI running in a browser.
+
+### Dashboard
+![StudyPilot AI dashboard](index.png)
+
+### Study planner
+![StudyPilot AI study planner](planner.png)
+
+### Practice quiz generator
+![StudyPilot AI quiz generator](quiz.png)
+
+### Learning progress
+![StudyPilot AI learning progress](porgess.png)
+
+### Focus timer
+![StudyPilot AI focus timer](focus.png)
+
 ## Built with
 
 - HTML for page structure
@@ -31,23 +50,6 @@ No account or server-side database is included. Saved data is local to the brows
 3. Open `index.html` in a browser, or use a local development server such as the VS Code Live Server extension.
 4. Test the navigation, planner, quiz maker, progress page, and focus timer.
 
-## Screenshots
-
-Add real screenshots of the running website here before submitting to Stardance. Capture the site in a browser (not the source code or logo) and save the images in a `screenshots/` folder.
-
-Suggested screenshots:
-- `screenshots/dashboard.png` — the dashboard with its cards visible
-- `screenshots/planner.png` — the study planner with example tasks
-- `screenshots/focus-timer.png` — the focus timer running
-
-After adding the files, embed them here using Markdown, for example:
-
-```md
-![StudyPilot AI dashboard](screenshots/dashboard.png)
-```
-
-Do not leave image links in the README until the corresponding screenshots exist.
-
 ## Live demo
 
 **Live demo URL:** Add the deployed website URL after hosting and testing it. The repository link is not a live demo.
@@ -60,4 +62,4 @@ This project is being developed as a learning project. The current focus is to f
 
 ## Current status
 
-Under development. Before resubmitting, verify that the published site works, add real screenshots, and make sure the code meets Stardance's AI-use limit.
+Under development. Before resubmitting, verify that the published site works and make sure the code meets Stardance's AI-use limit.
